@@ -1,0 +1,36 @@
+/**
+ * Challenges Page Styles
+ */
+
+.container {
+  padding: 24px;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+.error {
+  padding: 12px;
+  background-color: #ffe5e5;
+  color: #d32f2f;
+  border-left: 4px solid #d32f2f;
+  border-radius: 4px;
+  margin-bottom: 16px;
+}
+
+.loading {
+  padding: 16px;
+  text-align: center;
+  color: #666;
+  font-size: 1rem;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
