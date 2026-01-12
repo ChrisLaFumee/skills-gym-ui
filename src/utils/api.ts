@@ -36,10 +36,16 @@ type ChallengeResponse = {
 /**
  * Normalize challenge data from API response
  * Ensures consistent id field regardless of API response format
+ * Prioritizes _id (MongoDB format) then falls back to id
+ * @throws Error if no ID is present
  */
 function normalizeChallenge(data: ChallengeResponse): Challenge {
+  const id = data._id || data.id;
+  if (!id) {
+    throw new Error("Challenge missing required ID field (_id or id)");
+  }
   return {
-    id: data._id || data.id || "",
+    id,
     title: data.title,
     difficulty: data.difficulty,
     prompt: data.prompt,
